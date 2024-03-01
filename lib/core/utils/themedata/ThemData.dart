@@ -8,6 +8,11 @@ class Themedata {
           isDark ? AppColor.darkScaffoldColor : AppColor.lightScaffoldcolor,
       cardColor: isDark ? AppColor.darkCardColor : AppColor.lightCardColor,
       brightness: isDark ? Brightness.dark : Brightness.light,
+      appBarTheme: AppBarTheme(
+        backgroundColor:
+            isDark ? AppColor.darkScaffoldColor : AppColor.lightScaffoldcolor,
+        elevation: 0,
+      ),
     );
   }
 }
