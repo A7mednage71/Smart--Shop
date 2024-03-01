@@ -1,4 +1,4 @@
-class AssetsManager {
+class AppAssets {
   static String imagesPath = "assets/images";
   static String profileImagesPath = "assets/images/profile";
   static String bagImagesPath = "assets/images/bag";
