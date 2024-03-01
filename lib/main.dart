@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:smartshop/core/utils/themedata/ThemData.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 import 'package:smartshop/features/homeView/presentation/views/homeview.dart';
+import 'package:smartshop/rootScreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +29,7 @@ class ShopApp extends StatelessWidget {
         return MaterialApp(
           theme: Themedata.themedata(
               isDark: themeProvider.isDarkTheme(), context: context),
-          home: const Homeview(),
+          home: const RootPage(),
         );
       }),
     );

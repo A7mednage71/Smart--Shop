@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 
-class Homeview extends StatelessWidget {
-  const Homeview({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
