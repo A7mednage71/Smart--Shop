@@ -28,8 +28,8 @@ class ProfileScreen extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    height: 60,
-                    width: 60,
+                    height: 80,
+                    width: 80,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Theme.of(context).cardColor,
@@ -60,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               const Text(
                 "General",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 30,
@@ -94,13 +94,16 @@ class ProfileScreen extends StatelessWidget {
               ),
               const Text(
                 "Settings",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 10,
               ),
               SwitchListTile(
-                secondary: Image.asset(AppAssets.theme),
+                secondary: SizedBox(
+                  height: 45,
+                  child: Image.asset(AppAssets.theme),
+                ),
                 value: themeProvider.isDarkTheme(),
                 title: Text(
                     themeProvider.isDarkTheme() ? "dark mode" : "Light mode"),
@@ -116,7 +119,10 @@ class ProfileScreen extends StatelessWidget {
               ),
               const Text(
                 "Others",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 10,
               ),
               CustomListTile(
                 image: AppAssets.privacy,

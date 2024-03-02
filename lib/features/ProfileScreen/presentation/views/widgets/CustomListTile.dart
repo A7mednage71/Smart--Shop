@@ -15,9 +15,12 @@ class CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 25),
+      padding: const EdgeInsets.only(bottom: 20),
       child: ListTile(
-          leading: Image.asset(image),
+          leading: SizedBox(
+            height: 45,
+            child: Image.asset(image),
+          ),
           title: Text(text),
           trailing: IconButton(onPressed: fun, icon: Icon(icon))),
     );
