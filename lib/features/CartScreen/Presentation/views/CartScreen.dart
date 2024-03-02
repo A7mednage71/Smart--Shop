@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartshop/core/widgets/customemptydatawidget.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -6,8 +7,11 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text("CartScreen"),
+      body: CustomEmptyDataWidget(
+        title: 'Your Cart is empty',
+        subtitle:
+            "Looks like you have not added anything to your cart . Go ahead & explore a top categories",
+        buttomtext: 'Shop now',
       ),
     );
   }
