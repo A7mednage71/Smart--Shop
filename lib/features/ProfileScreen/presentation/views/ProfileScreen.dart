@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
+import 'package:smartshop/core/utils/App_Name_Shimmer.dart';
 import 'package:smartshop/core/utils/assets_manager.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 import 'package:smartshop/features/ProfileScreen/presentation/views/widgets/CustomListTile.dart';
@@ -13,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
     final themeProvider = Provider.of<ThemeDataProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Profile Screen"),
+        title: const AppNameWidget(),
         leading: Padding(
           padding: const EdgeInsets.only(left: 10),
           child: Image.asset(AppAssets.shoppingCart),
