@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:provider/provider.dart';
 import 'package:smartshop/core/utils/assets_manager.dart';
+import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
+import 'package:smartshop/features/ProfileScreen/presentation/views/widgets/CustomListTile.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeDataProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text("Profile Screen"),
@@ -16,9 +21,9 @@ class ProfileScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -56,9 +61,80 @@ class ProfileScreen extends StatelessWidget {
               "General",
               style: TextStyle(fontSize: 20),
             ),
-            ListTile(
-              leading: Image.asset(AppAssets.address),
-            )
+            const SizedBox(
+              height: 30,
+            ),
+            CustomListTile(
+              text: "All Orders",
+              image: AppAssets.orderSvg,
+              fun: () {},
+              icon: IconlyLight.arrowRight2,
+            ),
+            CustomListTile(
+              text: "Wishlist",
+              image: AppAssets.wishlistSvg,
+              fun: () {},
+              icon: IconlyLight.arrowRight2,
+            ),
+            CustomListTile(
+              text: "Viewed recently",
+              image: AppAssets.recent,
+              fun: () {},
+              icon: IconlyLight.arrowRight2,
+            ),
+            CustomListTile(
+              text: "Address",
+              image: AppAssets.address,
+              fun: () {},
+              icon: IconlyLight.arrowRight2,
+            ),
+            const Divider(
+              endIndent: 10,
+            ),
+            const Text(
+              "Settings",
+              style: TextStyle(fontSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SwitchListTile(
+              secondary: Image.asset(AppAssets.theme),
+              value: themeProvider.isDarkTheme(),
+              title: Text(
+                  themeProvider.isDarkTheme() ? "dark mode" : "Light mode"),
+              onChanged: (value) {
+                themeProvider.settheme(themevalue: value);
+              },
+            ),
+            const SizedBox(
+              height: 6,
+            ),
+            const Divider(
+              endIndent: 10,
+            ),
+            const Text(
+              "Others",
+              style: TextStyle(fontSize: 20),
+            ),
+            CustomListTile(
+              image: AppAssets.privacy,
+              text: "Privacy & Policy",
+              fun: () {},
+              icon: IconlyLight.arrowRight2,
+            ),
+            ElevatedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.logout),
+                label: const Text("Logout"),
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all<Size>(
+                    Size(100, 36),
+                  ),
+                )),
+            const SizedBox(
+              height: 50,
+            ),
           ],
         ),
       ),
