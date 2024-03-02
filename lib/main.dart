@@ -26,6 +26,7 @@ class ShopApp extends StatelessWidget {
       child:
           Consumer<ThemeDataProvider>(builder: (context, themeProvider, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: Themedata.themedata(
               isDark: themeProvider.isDarkTheme(), context: context),
           home: const RootPage(),

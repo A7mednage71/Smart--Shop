@@ -21,122 +21,122 @@ class ProfileScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 10),
-        child: ListView(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  height: 60,
-                  width: 60,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Theme.of(context).cardColor,
-                      border: Border.all(width: 3, color: Colors.red.shade300),
-                      image: const DecorationImage(
-                          fit: BoxFit.fill,
-                          image: NetworkImage(
-                            "https://cdn-icons-png.flaticon.com/512/219/219969.png",
-                          ))),
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Ahmed Ben Nageh"),
-                    Text("Ahmed_Nageh@gmail.com"),
-                  ],
-                ),
-                const Spacer(),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.edit))
-              ],
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const Text(
-              "General",
-              style: TextStyle(fontSize: 20),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            CustomListTile(
-              text: "All Orders",
-              image: AppAssets.orderSvg,
-              fun: () {},
-              icon: IconlyLight.arrowRight2,
-            ),
-            CustomListTile(
-              text: "Wishlist",
-              image: AppAssets.wishlistSvg,
-              fun: () {},
-              icon: IconlyLight.arrowRight2,
-            ),
-            CustomListTile(
-              text: "Viewed recently",
-              image: AppAssets.recent,
-              fun: () {},
-              icon: IconlyLight.arrowRight2,
-            ),
-            CustomListTile(
-              text: "Address",
-              image: AppAssets.address,
-              fun: () {},
-              icon: IconlyLight.arrowRight2,
-            ),
-            const Divider(
-              endIndent: 10,
-            ),
-            const Text(
-              "Settings",
-              style: TextStyle(fontSize: 20),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SwitchListTile(
-              secondary: Image.asset(AppAssets.theme),
-              value: themeProvider.isDarkTheme(),
-              title: Text(
-                  themeProvider.isDarkTheme() ? "dark mode" : "Light mode"),
-              onChanged: (value) {
-                themeProvider.settheme(themevalue: value);
-              },
-            ),
-            const SizedBox(
-              height: 6,
-            ),
-            const Divider(
-              endIndent: 10,
-            ),
-            const Text(
-              "Others",
-              style: TextStyle(fontSize: 20),
-            ),
-            CustomListTile(
-              image: AppAssets.privacy,
-              text: "Privacy & Policy",
-              fun: () {},
-              icon: IconlyLight.arrowRight2,
-            ),
-            ElevatedButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.logout),
-                label: const Text("Logout"),
-                style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all<Size>(
-                    Size(100, 36),
+        child: ListView(children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Theme.of(context).cardColor,
+                        border:
+                            Border.all(width: 3, color: Colors.red.shade300),
+                        image: const DecorationImage(
+                            fit: BoxFit.fill,
+                            image: NetworkImage(
+                              "https://cdn-icons-png.flaticon.com/512/219/219969.png",
+                            ))),
                   ),
-                )),
-            const SizedBox(
-              height: 50,
-            ),
-          ],
-        ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Ahmed Ben Nageh"),
+                      Text("Ahmed_Nageh@gmail.com"),
+                    ],
+                  ),
+                  const Spacer(),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.edit))
+                ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Text(
+                "General",
+                style: TextStyle(fontSize: 20),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              CustomListTile(
+                text: "All Orders",
+                image: AppAssets.orderSvg,
+                fun: () {},
+                icon: IconlyLight.arrowRight2,
+              ),
+              CustomListTile(
+                text: "Wishlist",
+                image: AppAssets.wishlistSvg,
+                fun: () {},
+                icon: IconlyLight.arrowRight2,
+              ),
+              CustomListTile(
+                text: "Viewed recently",
+                image: AppAssets.recent,
+                fun: () {},
+                icon: IconlyLight.arrowRight2,
+              ),
+              CustomListTile(
+                text: "Address",
+                image: AppAssets.address,
+                fun: () {},
+                icon: IconlyLight.arrowRight2,
+              ),
+              const Divider(
+                endIndent: 10,
+              ),
+              const Text(
+                "Settings",
+                style: TextStyle(fontSize: 20),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              SwitchListTile(
+                secondary: Image.asset(AppAssets.theme),
+                value: themeProvider.isDarkTheme(),
+                title: Text(
+                    themeProvider.isDarkTheme() ? "dark mode" : "Light mode"),
+                onChanged: (value) {
+                  themeProvider.settheme(themevalue: value);
+                },
+              ),
+              const SizedBox(
+                height: 6,
+              ),
+              const Divider(
+                endIndent: 10,
+              ),
+              const Text(
+                "Others",
+                style: TextStyle(fontSize: 20),
+              ),
+              CustomListTile(
+                image: AppAssets.privacy,
+                text: "Privacy & Policy",
+                fun: () {},
+                icon: IconlyLight.arrowRight2,
+              ),
+              Center(
+                child: ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.logout),
+                  label: const Text("Logout"),
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+            ],
+          ),
+        ]),
       ),
     );
   }
