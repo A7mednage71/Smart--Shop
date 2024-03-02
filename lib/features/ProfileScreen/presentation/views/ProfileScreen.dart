@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
-import 'package:smartshop/core/utils/App_Name_Shimmer.dart';
-import 'package:smartshop/core/utils/assets_manager.dart';
+import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
+import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 import 'package:smartshop/features/ProfileScreen/presentation/views/widgets/CustomListTile.dart';
 
