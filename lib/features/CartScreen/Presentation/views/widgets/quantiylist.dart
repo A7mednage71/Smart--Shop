@@ -23,21 +23,22 @@ class _QuantityListState extends State<QuantityList> {
         ),
         Expanded(
           child: ListView.builder(
-              itemCount: 20,
-              itemBuilder: (context, index) {
-                return Center(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "${index + 1}",
-                        style: const TextStyle(fontSize: 25),
-                      ),
+            itemCount: 20,
+            itemBuilder: (context, index) {
+              return Center(
+                child: InkWell(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "${index + 1}",
+                      style: const TextStyle(fontSize: 25),
                     ),
                   ),
-                );
-              }),
+                ),
+              );
+            },
+          ),
         ),
       ],
     );

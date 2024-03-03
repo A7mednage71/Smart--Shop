@@ -63,17 +63,17 @@ class CartItem extends StatelessWidget {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
                     ),
                     ElevatedButton.icon(
-                        onPressed: () {
-                          showModalBottomSheet(
-                            //isScrollControlled: true,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
-                            context: context,
-                            builder: (context) => const QuantityList(),
-                          );
-                        },
-                        icon: const Icon(IconlyLight.arrowDown2),
-                        label: const Text("Qty:1"))
+                      onPressed: () {
+                        showModalBottomSheet(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                          context: context,
+                          builder: (context) => const QuantityList(),
+                        );
+                      },
+                      icon: const Icon(IconlyLight.arrowDown2),
+                      label: const Text("Qty:1"),
+                    )
                   ],
                 ),
               ],
