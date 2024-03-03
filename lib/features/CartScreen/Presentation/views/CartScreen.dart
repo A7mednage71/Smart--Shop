@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/widgets/customemptydatawidget.dart';
+import 'package:smartshop/features/CartScreen/Presentation/views/widgets/bottomSheet.dart';
 import 'package:smartshop/features/CartScreen/Presentation/views/widgets/cartitem.dart';
 
 class CartScreen extends StatelessWidget {
@@ -50,6 +51,7 @@ class CartScreen extends StatelessWidget {
                 },
               ),
             ),
+            bottomSheet: const BottomSheetCart(),
           );
   }
 }
