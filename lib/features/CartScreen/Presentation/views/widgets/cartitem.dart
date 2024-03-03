@@ -1,6 +1,7 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:smartshop/features/CartScreen/Presentation/views/widgets/quantiylist.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({super.key});
@@ -62,7 +63,15 @@ class CartItem extends StatelessWidget {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
                     ),
                     ElevatedButton.icon(
-                        onPressed: () {},
+                        onPressed: () {
+                          showModalBottomSheet(
+                            //isScrollControlled: true,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)),
+                            context: context,
+                            builder: (context) => const QuantityList(),
+                          );
+                        },
                         icon: const Icon(IconlyLight.arrowDown2),
                         label: const Text("Qty:1"))
                   ],
