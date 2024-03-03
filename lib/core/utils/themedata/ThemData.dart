@@ -12,7 +12,10 @@ class Themedata {
         backgroundColor:
             isDark ? AppColor.darkScaffoldColor : AppColor.lightScaffoldcolor,
         elevation: 0,
+        iconTheme: IconThemeData(color: isDark ? Colors.white : Colors.black),
       ),
+      iconTheme: IconThemeData(
+          color: isDark ? AppColor.lightCardColor : AppColor.darkCardColor),
     );
   }
 }

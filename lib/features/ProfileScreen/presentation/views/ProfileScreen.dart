@@ -14,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
     final themeProvider = Provider.of<ThemeDataProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const AppNameWidget(),
+        title: const AppNameWidget(name: "Shop Smart"),
         leading: Padding(
           padding: const EdgeInsets.only(left: 10),
           child: Image.asset(AppAssets.shoppingCart),

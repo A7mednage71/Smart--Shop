@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
+import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/widgets/customemptydatawidget.dart';
 import 'package:smartshop/features/CartScreen/Presentation/views/widgets/cartitem.dart';
 
@@ -19,7 +20,7 @@ class CartScreen extends StatelessWidget {
           )
         : Scaffold(
             appBar: AppBar(
-              title: const Text("Shopping basket"),
+              title: const AppNameWidget(name: "Shopping basket"),
               leading: Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Image.asset(AppAssets.shoppingCart),
