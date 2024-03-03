@@ -26,19 +26,30 @@ class CartScreen extends StatelessWidget {
                 child: Image.asset(AppAssets.shoppingCart),
               ),
               actions: [
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.delete_forever_rounded)),
+                Padding(
+                  padding: const EdgeInsets.only(right: 5),
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Theme.of(context).primaryColor),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.delete_forever_rounded)),
+                  ),
+                )
               ],
             ),
             body: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return const CartItem();
-                  },
-                )),
+              padding: const EdgeInsets.all(8.0),
+              child: ListView.builder(
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return const CartItem();
+                },
+              ),
+            ),
           );
   }
 }

@@ -12,7 +12,7 @@ class CartItem extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            height: 150,
+            height: 130,
             width: 130,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
