@@ -1,13 +1,72 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:smartshop/core/assets_manger/assets_manager.dart';
+import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 
-class SearchScreen extends StatelessWidget {
+class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
   @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+  late TextEditingController _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("SearchScreen"),
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const AppNameWidget(name: "Search Products"),
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Image.asset(AppAssets.shoppingCart),
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 10,
+              ),
+              TextField(
+                controller: _controller,
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(IconlyLight.search),
+                  suffixIcon: InkWell(
+                    onTap: () {
+                      setState(() {
+                        _controller.clear();
+                        FocusScope.of(context).unfocus();
+                      });
+                    },
+                    child: const Icon(
+                      Icons.clear,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+                onChanged: (value) {},
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
