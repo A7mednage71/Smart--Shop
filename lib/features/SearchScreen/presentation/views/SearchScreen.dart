@@ -1,3 +1,5 @@
+import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
@@ -51,10 +53,8 @@ class _SearchScreenState extends State<SearchScreen> {
                   prefixIcon: const Icon(IconlyLight.search),
                   suffixIcon: InkWell(
                     onTap: () {
-                      setState(() {
-                        _controller.clear();
-                        FocusScope.of(context).unfocus();
-                      });
+                      _controller.clear();
+                      FocusScope.of(context).unfocus();
                     },
                     child: const Icon(
                       Icons.clear,
@@ -64,10 +64,35 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
                 onChanged: (value) {},
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              Expanded(
+                child: DynamicHeightGridView(
+                  itemCount: 100,
+                  builder: (context, index) {
+                    return const ProductItem();
+                  },
+                  crossAxisCount: 2,
+                ),
+              )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class ProductItem extends StatelessWidget {
+  const ProductItem({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FancyShimmerImage(
+      imageUrl: AppAssets.testimage,
     );
   }
 }
