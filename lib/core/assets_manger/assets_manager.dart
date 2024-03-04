@@ -44,4 +44,8 @@ class AppAssets {
 
   static String testimage =
       "https://www.shutterstock.com/image-photo/white-sneakers-on-background-including-260nw-1100736923.jpg";
+  static List<String> panners = [
+    banner1,
+    banner2,
+  ];
 }
