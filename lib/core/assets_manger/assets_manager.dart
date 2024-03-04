@@ -41,4 +41,7 @@ class AppAssets {
   static String cosmetics = "$categoriesImagesPath/cosmetics.png";
   static String shoes = "$categoriesImagesPath/shoes.png";
   static String pc = "$categoriesImagesPath/pc.png";
+
+  static String testimage =
+      "https://www.shutterstock.com/image-photo/white-sneakers-on-background-including-260nw-1100736923.jpg";
 }
