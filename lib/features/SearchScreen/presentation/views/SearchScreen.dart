@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
+import 'package:smartshop/features/SearchScreen/presentation/views/widgets/productitem.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -84,15 +85,3 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 }
 
-class ProductItem extends StatelessWidget {
-  const ProductItem({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return FancyShimmerImage(
-      imageUrl: AppAssets.testimage,
-    );
-  }
-}
