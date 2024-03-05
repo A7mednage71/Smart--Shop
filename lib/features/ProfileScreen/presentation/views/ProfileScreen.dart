@@ -5,6 +5,7 @@ import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 import 'package:smartshop/features/ProfileScreen/presentation/views/widgets/CustomListTile.dart';
+import 'package:smartshop/features/viewedRecently/viewed_recently.dart';
 import 'package:smartshop/features/wishlistScreen/wishlist_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -84,7 +85,9 @@ class ProfileScreen extends StatelessWidget {
               CustomListTile(
                 text: "Viewed recently",
                 image: AppAssets.recent,
-                fun: () {},
+                fun: () {
+                  Navigator.pushNamed(context, ViewdRecentlyScreen.routname);
+                },
                 icon: IconlyLight.arrowRight2,
               ),
               CustomListTile(

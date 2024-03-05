@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:smartshop/core/utils/themedata/ThemData.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 import 'package:smartshop/features/detailsScreen/details_screen.dart';
+import 'package:smartshop/features/viewedRecently/viewed_recently.dart';
 import 'package:smartshop/features/wishlistScreen/wishlist_screen.dart';
 import 'package:smartshop/rootScreen.dart';
 
@@ -37,6 +38,8 @@ class ShopApp extends StatelessWidget {
             ProductDetailsScreen.routname: (context) =>
                 const ProductDetailsScreen(),
             WishlistScreen.routname: (context) => const WishlistScreen(),
+            ViewdRecentlyScreen.routname: (context) =>
+                const ViewdRecentlyScreen(),
           },
         );
       }),
