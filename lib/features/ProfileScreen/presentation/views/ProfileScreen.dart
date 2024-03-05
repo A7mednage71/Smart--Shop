@@ -140,8 +140,15 @@ class ProfileScreen extends StatelessWidget {
               Center(
                 child: ElevatedButton.icon(
                   onPressed: () {},
-                  icon: const Icon(Icons.logout),
-                  label: const Text("Logout"),
+                  icon: const Icon(
+                    Icons.logout,
+                    color: Colors.white,
+                  ),
+                  label: const Text(
+                    "Logout",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                 ),
               ),
               const SizedBox(
