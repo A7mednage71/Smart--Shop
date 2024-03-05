@@ -2,6 +2,7 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
+import 'package:smartshop/features/homeView/presentation/views/widgets/latestarrivalitem.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,6 +20,7 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 10,
@@ -46,6 +48,29 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              "Latest Arrival",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: 150,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                itemBuilder: (BuildContext contxt, int index) {
+                  return const LatestArrivalItem();
+                },
+              ),
+            )
           ],
         ),
       ),

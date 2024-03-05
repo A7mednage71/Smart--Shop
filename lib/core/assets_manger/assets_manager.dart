@@ -48,4 +48,7 @@ class AppAssets {
     banner1,
     banner2,
   ];
+
+  static String latestproducttest =
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHV4VrE0aMRnWMRRH6QmxFOcfK1ncTJEKlYA&usqp=CAU";
 }
