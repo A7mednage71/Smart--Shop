@@ -44,6 +44,16 @@ class AppAssets {
 
   static String testimage =
       "https://www.shutterstock.com/image-photo/white-sneakers-on-background-including-260nw-1100736923.jpg";
+  static List<dynamic> categories = [
+    [mobiles, "Phones"],
+    [fashion, "Clothes"],
+    [watch, "Watches"],
+    [book, "Books"],
+    [electronics, "Electronics"],
+    [cosmetics, "Cosmetics"],
+    [shoes, "Shoes"],
+    [pc, "Laptops"],
+  ];
   static List<String> panners = [
     banner1,
     banner2,
