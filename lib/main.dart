@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:smartshop/core/utils/themedata/ThemData.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 import 'package:smartshop/features/detailsScreen/details_screen.dart';
+import 'package:smartshop/features/wishlistScreen/wishlist_screen.dart';
 import 'package:smartshop/rootScreen.dart';
 
 void main() {
@@ -35,6 +36,7 @@ class ShopApp extends StatelessWidget {
           routes: {
             ProductDetailsScreen.routname: (context) =>
                 const ProductDetailsScreen(),
+            WishlistScreen.routname: (context) => const WishlistScreen(),
           },
         );
       }),
