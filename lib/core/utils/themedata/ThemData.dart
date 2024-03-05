@@ -29,6 +29,9 @@ class Themedata {
               BorderSide(width: 2, color: isDark ? Colors.white : Colors.black),
         ),
       ),
+      primaryColor: isDark
+          ? const Color.fromARGB(255, 218, 54, 202)
+          : const Color.fromARGB(255, 233, 192, 229),
     );
   }
 }
