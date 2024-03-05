@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smartshop/features/detailsScreen/details_screen.dart';
 
 class Categoryitem extends StatelessWidget {
   const Categoryitem({super.key, required this.image, required this.name});
@@ -10,9 +9,7 @@ class Categoryitem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, ProductDetailsScreen.routname);
-        },
+        onTap: () {},
         child: Column(
           children: [
             Image.asset(
