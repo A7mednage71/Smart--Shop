@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smartshop/core/assets_manger/assets_manager.dart';
 
 class CustomEmptyDataWidget extends StatelessWidget {
   const CustomEmptyDataWidget(
@@ -58,22 +57,18 @@ class CustomEmptyDataWidget extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          SizedBox(
-            height: 80,
-            width: 170,
-            child: ElevatedButton(
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
+          ElevatedButton(
+            style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
-              onPressed: () {},
-              child: Text(
-                buttomtext,
-                style: const TextStyle(fontSize: 20),
-              ),
+            ),
+            onPressed: () {},
+            child: Text(
+              buttomtext,
+              style: const TextStyle(fontSize: 20),
             ),
           )
         ],
