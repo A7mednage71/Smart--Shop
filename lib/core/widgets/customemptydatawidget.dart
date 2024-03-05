@@ -6,10 +6,12 @@ class CustomEmptyDataWidget extends StatelessWidget {
       {super.key,
       required this.title,
       required this.subtitle,
-      required this.buttomtext});
+      required this.buttomtext,
+      required this.image});
   final String title;
   final String subtitle;
   final String buttomtext;
+  final String image;
   @override
   Widget build(BuildContext context) {
     double screenwidth = MediaQuery.of(context).size.width;
@@ -24,7 +26,7 @@ class CustomEmptyDataWidget extends StatelessWidget {
           ),
           Center(
             child: Image.asset(
-              AppAssets.shoppingCart,
+              image,
               width: screenwidth * 0.7,
             ),
           ),
