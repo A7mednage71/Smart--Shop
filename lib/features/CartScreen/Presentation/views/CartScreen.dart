@@ -11,12 +11,13 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isempty
-        ? const Scaffold(
+        ? Scaffold(
             body: CustomEmptyDataWidget(
               title: 'Your Cart is empty',
               subtitle:
                   "Looks like you have not added anything to your cart . Go ahead & explore a top categories",
               buttomtext: 'Shop now',
+              image: AppAssets.shoppingCart,
             ),
           )
         : Scaffold(
