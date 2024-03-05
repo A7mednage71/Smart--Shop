@@ -17,6 +17,7 @@ void main() {
 class ShopApp extends StatelessWidget {
   const ShopApp({super.key});
 
+  @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [

@@ -42,6 +42,9 @@ class AppAssets {
   static String shoes = "$categoriesImagesPath/shoes.png";
   static String pc = "$categoriesImagesPath/pc.png";
 
+  static String phonetest =
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg";
+
   static String testimage =
       "https://www.shutterstock.com/image-photo/white-sneakers-on-background-including-260nw-1100736923.jpg";
   static List<dynamic> categories = [

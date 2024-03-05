@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomListTile extends StatelessWidget {
   const CustomListTile({
+    super.key,
     required this.image,
     required this.text,
     required this.fun,

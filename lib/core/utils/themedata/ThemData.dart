@@ -31,7 +31,7 @@ class Themedata {
       ),
       primaryColor: isDark
           ? const Color.fromARGB(255, 218, 54, 202)
-          : const Color.fromARGB(255, 233, 192, 229),
+          : const Color(0xffE2E0FF),
     );
   }
 }
