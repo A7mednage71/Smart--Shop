@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
+import 'package:smartshop/features/ProfileScreen/presentation/views/widgets/AlertDialogwidget.dart';
 import 'package:smartshop/features/ProfileScreen/presentation/views/widgets/CustomListTile.dart';
 import 'package:smartshop/features/viewedRecently/viewed_recently.dart';
 import 'package:smartshop/features/wishlistScreen/wishlist_screen.dart';
@@ -139,7 +140,13 @@ class ProfileScreen extends StatelessWidget {
               ),
               Center(
                 child: ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return const AlertDialogWidget();
+                        });
+                  },
                   icon: const Icon(
                     Icons.logout,
                     color: Colors.white,
@@ -148,7 +155,9 @@ class ProfileScreen extends StatelessWidget {
                     "Logout",
                     style: TextStyle(color: Colors.white),
                   ),
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                  ),
                 ),
               ),
               const SizedBox(
