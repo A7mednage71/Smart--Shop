@@ -17,6 +17,7 @@ class Themedata {
       iconTheme: IconThemeData(
           color: isDark ? AppColor.lightCardColor : AppColor.darkCardColor),
       inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
         filled: true,
         contentPadding: const EdgeInsets.all(10),
         enabledBorder: OutlineInputBorder(
