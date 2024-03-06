@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:smartshop/core/utils/validators/my_validator.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
+import 'package:smartshop/features/loginScreen/presentation/views/widgets/signinwithgoogle_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -203,29 +204,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class SighInWithGoogle extends StatelessWidget {
-  const SighInWithGoogle({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-      ),
-      onPressed: () {},
-      icon: const Icon(Icons.ac_unit),
-      label: const Text(
-        "Sign in with google",
-        style: TextStyle(color: Colors.black),
       ),
     );
   }
