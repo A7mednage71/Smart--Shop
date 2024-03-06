@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:smartshop/core/utils/validators/my_validator.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
-import 'package:smartshop/features/loginScreen/presentation/views/widgets/defaulttextformfield.dart';
+import 'package:smartshop/features/loginScreen/presentation/views/widgets/default_text_form_field.dart';
+import 'package:smartshop/features/loginScreen/presentation/views/widgets/password_text_form_field.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/signinwithgoogle_widget.dart';
 import 'package:smartshop/features/registerscreen/presentation/views/register_screen.dart';
 
@@ -91,28 +92,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  TextFormField(
-                    controller: _passwordtextfieldcontroller,
-                    focusNode: _passwordfocusnode,
-                    textInputAction: TextInputAction.done,
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: secure,
-                    decoration: InputDecoration(
-                      prefixIcon: const Icon(IconlyLight.password),
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            secure = !secure;
-                          });
-                        },
-                        icon:
-                            Icon(secure ? IconlyLight.hide : IconlyLight.show),
-                      ),
-                      hintText: "**********",
-                    ),
-                    validator: (value) {
-                      return MyValidators.passwordValidator(value);
-                    },
+                  PasswordCustomFormField(
+                    passwordtextfieldcontroller: _passwordtextfieldcontroller,
+                    passwordfocusnode: _passwordfocusnode,
+                    focusto: null,
+                    passwordinputaction: TextInputAction.done,
+                    passwordinputtype: TextInputType.visiblePassword,
+                    hint: '**********',
                   ),
                   Align(
                     alignment: Alignment.centerRight,
