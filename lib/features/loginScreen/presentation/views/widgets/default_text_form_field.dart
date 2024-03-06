@@ -5,35 +5,36 @@ import 'package:smartshop/core/utils/validators/my_validator.dart';
 class DefaultCustomFormField extends StatelessWidget {
   const DefaultCustomFormField({
     super.key,
-    required this.emailtextfieldcontroller,
-    required this.emailfocusnode,
-    required this.passwordfocusnode,
-    required this.emailinputaction,
-    required this.emailinputtype,
+    required this.textfieldcontroller,
+    required this.focusnode,
+    required this.focusnodeto,
+    required this.inputaction,
+    required this.inputtype,
     required this.hint,
+    this.icon = IconlyLight.message,
   });
 
-  final TextEditingController emailtextfieldcontroller;
-  final FocusNode emailfocusnode;
-  final FocusNode passwordfocusnode;
-  final TextInputAction emailinputaction;
-  final TextInputType emailinputtype;
+  final TextEditingController textfieldcontroller;
+  final FocusNode focusnode;
+  final FocusNode focusnodeto;
+  final TextInputAction inputaction;
+  final TextInputType inputtype;
   final String hint;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: emailtextfieldcontroller,
-      focusNode: emailfocusnode,
-      textInputAction: emailinputaction,
-      keyboardType: emailinputtype,
-      decoration: InputDecoration(
-          prefixIcon: const Icon(IconlyLight.message), hintText: hint),
+      controller: textfieldcontroller,
+      focusNode: focusnode,
+      textInputAction: inputaction,
+      keyboardType: inputtype,
+      decoration: InputDecoration(prefixIcon: Icon(icon), hintText: hint),
       validator: (value) {
         return MyValidators.emailValidator(value);
       },
       onFieldSubmitted: (value) {
-        FocusScope.of(context).requestFocus(passwordfocusnode);
+        FocusScope.of(context).requestFocus(focusnodeto);
       },
     );
   }
