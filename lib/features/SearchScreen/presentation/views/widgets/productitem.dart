@@ -2,7 +2,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
-import 'package:smartshop/features/detailsScreen/details_screen.dart';
+import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({

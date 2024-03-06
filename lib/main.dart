@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:smartshop/core/utils/themedata/ThemData.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
-import 'package:smartshop/features/detailsScreen/details_screen.dart';
-import 'package:smartshop/features/loginScreen/Login_Screen.dart';
-import 'package:smartshop/features/viewedRecently/viewed_recently.dart';
-import 'package:smartshop/features/wishlistScreen/wishlist_screen.dart';
+import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
+import 'package:smartshop/features/loginScreen/presentation/views/Login_Screen.dart';
+import 'package:smartshop/features/viewedRecently/presentation/views/viewed_recently.dart';
+import 'package:smartshop/features/wishlistScreen/presentations/views/wishlist_screen.dart';
 import 'package:smartshop/rootScreen.dart';
 
 void main() {
