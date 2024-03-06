@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:smartshop/core/utils/validators/my_validator.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
+import 'package:smartshop/features/loginScreen/presentation/views/widgets/defaulttextformfield.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/signinwithgoogle_widget.dart';
 import 'package:smartshop/features/registerscreen/presentation/views/register_screen.dart';
 
@@ -79,20 +80,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 40,
                   ),
-                  TextFormField(
-                    controller: _emailtextfieldcontroller,
-                    focusNode: _emailfocusnode,
-                    textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(IconlyLight.message),
-                        hintText: "youremail@gmail.com"),
-                    validator: (value) {
-                      return MyValidators.emailValidator(value);
-                    },
-                    onFieldSubmitted: (value) {
-                      FocusScope.of(context).requestFocus(_passwordfocusnode);
-                    },
+                  DefaultCustomFormField(
+                    emailtextfieldcontroller: _emailtextfieldcontroller,
+                    emailfocusnode: _emailfocusnode,
+                    passwordfocusnode: _passwordfocusnode,
+                    emailinputaction: TextInputAction.next,
+                    emailinputtype: TextInputType.emailAddress,
+                    hint: "youremail@gmail.com",
                   ),
                   const SizedBox(
                     height: 20,
