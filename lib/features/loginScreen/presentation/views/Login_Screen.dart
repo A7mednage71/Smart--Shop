@@ -3,6 +3,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:smartshop/core/utils/validators/my_validator.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/signinwithgoogle_widget.dart';
+import 'package:smartshop/features/registerscreen/presentation/views/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -189,7 +190,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(fontSize: 18),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, RegisterScreen.routname);
+                        },
                         child: const Text(
                           "Sign up",
                           style: TextStyle(
