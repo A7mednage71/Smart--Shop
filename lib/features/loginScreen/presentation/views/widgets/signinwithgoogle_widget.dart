@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 
 class SighInWithGoogle extends StatelessWidget {
   const SighInWithGoogle({
@@ -14,7 +15,10 @@ class SighInWithGoogle extends StatelessWidget {
         ),
       ),
       onPressed: () {},
-      icon: const Icon(Icons.ac_unit),
+      icon: const Icon(
+        Ionicons.logo_google,
+        color: Colors.red,
+      ),
       label: const Text(
         "Sign in with google",
         style: TextStyle(color: Colors.black),
