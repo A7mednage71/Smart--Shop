@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/widgets/custom_material_button.dart';
 import 'package:smartshop/features/registerscreen/presentation/views/widgets/Text_button_image_option.dart';
+import 'package:smartshop/features/registerscreen/presentation/views/widgets/image_picker_alrt_component.dart';
 
 class CustomImagePicker extends StatelessWidget {
   const CustomImagePicker({super.key, required this.photo});
@@ -43,36 +44,8 @@ class CustomImagePicker extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (context) {
-                  return AlertDialog(
-                    content: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Text(
-                          "Choose Option",
-                          style: TextStyle(fontSize: 22),
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        CustomTextButtonImageOption(
-                          text: 'Camera',
-                          icon: Icons.camera,
-                          onPressed: () {},
-                        ),
-                        CustomTextButtonImageOption(
-                          text: 'Gallery',
-                          icon: Icons.photo,
-                          onPressed: () {},
-                        ),
-                        CustomTextButtonImageOption(
-                          text: 'Remove',
-                          icon: Icons.remove_circle_outline,
-                          onPressed: () {},
-                          color: Colors.red,
-                        )
-                      ],
-                    ),
+                  return const AlertDialog(
+                    content: ImagePickeraAlertDialog(),
                   );
                 },
               );
