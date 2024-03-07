@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
+import 'package:smartshop/core/widgets/custom_material_button.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({super.key});
@@ -20,20 +21,11 @@ class ProductDetailsScreen extends StatelessWidget {
           ),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Material(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(10),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(10),
-                onTap: () {},
-                child: const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Icon(Icons.close),
-                ),
-              ),
+            padding: EdgeInsets.only(right: 8),
+            child: CustomMaterialButton(
+              icon: Icon(IconlyLight.bag2),
             ),
           ),
         ],
@@ -88,17 +80,10 @@ class ProductDetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Row(
                   children: [
-                    Material(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(27),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(27),
-                        onTap: () {},
-                        child: const Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Icon(IconlyLight.heart),
-                        ),
-                      ),
+                    const CustomMaterialButton(
+                      icon: Icon(IconlyLight.heart),
+                      radius: 27,
+                      value: 16,
                     ),
                     const SizedBox(
                       width: 20,

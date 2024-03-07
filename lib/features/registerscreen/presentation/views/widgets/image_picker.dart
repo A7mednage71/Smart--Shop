@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartshop/core/widgets/custom_material_button.dart';
 
 class CustomImagePicker extends StatelessWidget {
   const CustomImagePicker({super.key});
@@ -6,6 +7,7 @@ class CustomImagePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         Container(
           height: 110,
@@ -16,6 +18,13 @@ class CustomImagePicker extends StatelessWidget {
             border: Border.all(width: 1.2, color: Colors.black),
           ),
         ),
+        const Positioned(
+          right: -10,
+          top: -8,
+          child: CustomMaterialButton(
+            icon: Icon(Icons.add_a_photo_outlined),
+          ),
+        )
       ],
     );
   }

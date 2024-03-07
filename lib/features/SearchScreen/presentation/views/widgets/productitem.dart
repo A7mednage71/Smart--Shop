@@ -2,6 +2,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
+import 'package:smartshop/core/widgets/custom_material_button.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
 
 class ProductItem extends StatelessWidget {
@@ -50,27 +51,18 @@ class ProductItem extends StatelessWidget {
             const SizedBox(
               height: 7,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   "\$1399.99",
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.blue,
                   ),
                 ),
-                Material(
-                  color: Colors.lightBlue.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(10),
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(10),
-                    onTap: () {},
-                    child: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(Icons.add_shopping_cart_rounded),
-                    ),
-                  ),
+                CustomMaterialButton(
+                  icon: Icon(Icons.add_shopping_cart_rounded),
                 )
               ],
             )
