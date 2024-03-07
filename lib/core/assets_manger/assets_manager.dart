@@ -21,6 +21,8 @@ class AppAssets {
   static String privacy = "$profileImagesPath/privacy.png";
   static String recent = "$profileImagesPath/recent.png";
   static String theme = "$profileImagesPath/theme.png";
+  static String defaultuserimage =
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlJ8PzPLg8d2HJkNytkC-WYHjElSVJ3fHRfw&usqp=CAU";
   // Bag
   static String bagWish = "$bagImagesPath/bag_wish.png";
   static String shoppingBasket = "$bagImagesPath/shopping_basket.png";
