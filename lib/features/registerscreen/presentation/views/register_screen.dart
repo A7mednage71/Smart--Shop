@@ -4,6 +4,7 @@ import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/widgets/sighButton.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/default_text_form_field.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/password_text_form_field.dart';
+import 'package:smartshop/features/registerscreen/presentation/views/widgets/image_picker.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -18,12 +19,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   late TextEditingController _emailtextfieldcontroller;
   late TextEditingController _usertextfieldcontroller;
   late TextEditingController _passwordtextfieldcontroller;
-  late TextEditingController _Repeatpasswordtextfieldcontroller;
+  late TextEditingController _repeatpasswordtextfieldcontroller;
 
   late FocusNode _userfocusnode;
   late FocusNode _emailfocusnode;
   late FocusNode _passwordfocusnode;
-  late FocusNode _Repeatpasswordfocusnode;
+  late FocusNode _repeatpasswordfocusnode;
 
   GlobalKey<FormState> key = GlobalKey();
 
@@ -34,12 +35,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _usertextfieldcontroller = TextEditingController();
     _emailtextfieldcontroller = TextEditingController();
     _passwordtextfieldcontroller = TextEditingController();
-    _Repeatpasswordtextfieldcontroller = TextEditingController();
+    _repeatpasswordtextfieldcontroller = TextEditingController();
 
     _userfocusnode = FocusNode();
     _emailfocusnode = FocusNode();
     _passwordfocusnode = FocusNode();
-    _Repeatpasswordfocusnode = FocusNode();
+    _repeatpasswordfocusnode = FocusNode();
 
     super.initState();
   }
@@ -69,9 +70,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
                   const AppNameWidget(
                     name: "Welcome to shop smart",
                     size: 30,
@@ -88,6 +86,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const Text(
                       "Sign up now to receive special offers and updates from our app"),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  const CustomImagePicker(),
                   const SizedBox(
                     height: 40,
                   ),
@@ -117,7 +119,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   PasswordCustomFormField(
                     passwordtextfieldcontroller: _passwordtextfieldcontroller,
                     passwordfocusnode: _passwordfocusnode,
-                    focusto: _Repeatpasswordfocusnode,
+                    focusto: _repeatpasswordfocusnode,
                     passwordinputaction: TextInputAction.next,
                     passwordinputtype: TextInputType.visiblePassword,
                     hint: 'Password',
@@ -127,9 +129,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   PasswordCustomFormField(
                     passwordtextfieldcontroller:
-                        _Repeatpasswordtextfieldcontroller,
-                    passwordfocusnode: _Repeatpasswordfocusnode,
-                    focusto: _Repeatpasswordfocusnode,
+                        _repeatpasswordtextfieldcontroller,
+                    passwordfocusnode: _repeatpasswordfocusnode,
+                    focusto: _repeatpasswordfocusnode,
                     passwordinputaction: TextInputAction.done,
                     passwordinputtype: TextInputType.visiblePassword,
                     hint: 'Repeat Password',
