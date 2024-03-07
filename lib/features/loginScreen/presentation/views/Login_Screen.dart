@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:smartshop/core/utils/validators/my_validator.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
+import 'package:smartshop/core/widgets/sighButton.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/default_text_form_field.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/password_text_form_field.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/signinwithgoogle_widget.dart';
@@ -15,7 +14,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool secure = true;
+  // bool secure = true;
 
   late TextEditingController _passwordtextfieldcontroller;
   late TextEditingController _emailtextfieldcontroller;
@@ -82,11 +81,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 40,
                   ),
                   DefaultCustomFormField(
-                    emailtextfieldcontroller: _emailtextfieldcontroller,
-                    emailfocusnode: _emailfocusnode,
-                    passwordfocusnode: _passwordfocusnode,
-                    emailinputaction: TextInputAction.next,
-                    emailinputtype: TextInputType.emailAddress,
+                    textfieldcontroller: _emailtextfieldcontroller,
+                    focusnode: _emailfocusnode,
+                    focusnodeto: _passwordfocusnode,
+                    inputaction: TextInputAction.next,
+                    inputtype: TextInputType.emailAddress,
                     hint: "youremail@gmail.com",
                   ),
                   const SizedBox(
@@ -114,18 +113,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 50),
-                      shape: const ContinuousRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(18)),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      "Sign in",
-                      style: TextStyle(fontSize: 18),
-                    ),
+                  const SignButton(
+                    text: "Sign in",
                   ),
                   const SizedBox(
                     height: 20,
