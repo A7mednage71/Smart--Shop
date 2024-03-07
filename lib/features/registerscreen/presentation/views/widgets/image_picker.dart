@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:smartshop/core/widgets/custom_material_button.dart';
 
 class CustomImagePicker extends StatelessWidget {
-  const CustomImagePicker({super.key});
-
+  const CustomImagePicker({super.key, required this.photo});
+  final XFile? photo;
   @override
   Widget build(BuildContext context) {
     return Stack(

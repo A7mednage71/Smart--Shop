@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/widgets/sighButton.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/default_text_form_field.dart';
@@ -29,6 +30,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   GlobalKey<FormState> key = GlobalKey();
 
   final AutovalidateMode _autovalidatemode = AutovalidateMode.always;
+
+  XFile? myimage;
 
   @override
   void initState() {
@@ -89,7 +92,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(
                     height: 40,
                   ),
-                  const CustomImagePicker(),
+                  CustomImagePicker(
+                    photo: myimage,
+                  ),
                   const SizedBox(
                     height: 40,
                   ),

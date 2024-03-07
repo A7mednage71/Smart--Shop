@@ -36,7 +36,7 @@ class ShopApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: Themedata.themedata(
               isDark: themeProvider.isDarkTheme(), context: context),
-          home: const RootPage(),
+          home: const LoginScreen(),
           routes: {
             ProductDetailsScreen.routname: (context) =>
                 const ProductDetailsScreen(),
