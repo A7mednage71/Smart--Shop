@@ -113,7 +113,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  const SignButton(
+                  SignButton(
+                    onPressed: () {},
                     text: "Sign in",
                   ),
                   const SizedBox(

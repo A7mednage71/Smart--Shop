@@ -19,7 +19,7 @@ class CustomMaterialButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(radius),
       child: InkWell(
         borderRadius: BorderRadius.circular(radius),
-        onTap: () {},
+        onTap: onTap,
         child: Padding(
           padding: EdgeInsets.all(value),
           child: icon,

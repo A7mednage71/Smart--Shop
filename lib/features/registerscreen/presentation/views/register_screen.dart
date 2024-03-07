@@ -144,7 +144,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const SignButton(
+                  SignButton(
+                    onPressed: () {},
                     text: "Sign Up",
                   ),
                 ],
