@@ -6,7 +6,7 @@ class AppAssets {
   static String categoriesImagesPath = "assets/images/categories";
 
 // general images
-  static String forgotPassword = "$imagesPath/forgot_password.jpg";
+  static String forgotPassword = "assets/images/forgetpass.jpg";
   static String mapRounded = "$imagesPath/rounded_map.png";
   static String warning = "$imagesPath/warning.png";
   static String error = "$imagesPath/error.png";

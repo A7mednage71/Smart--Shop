@@ -6,8 +6,8 @@ class DefaultCustomFormField extends StatelessWidget {
   const DefaultCustomFormField({
     super.key,
     required this.textfieldcontroller,
-    required this.focusnode,
-    required this.focusnodeto,
+    this.focusnode,
+    this.focusnodeto,
     required this.inputaction,
     required this.inputtype,
     required this.hint,
@@ -15,8 +15,8 @@ class DefaultCustomFormField extends StatelessWidget {
   });
 
   final TextEditingController textfieldcontroller;
-  final FocusNode focusnode;
-  final FocusNode focusnodeto;
+  final FocusNode? focusnode;
+  final FocusNode? focusnodeto;
   final TextInputAction inputaction;
   final TextInputType inputtype;
   final String hint;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/widgets/sighButton.dart';
+import 'package:smartshop/features/forgetPasswordScreen/presentation/views/forget_password_screen.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/default_text_form_field.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/password_text_form_field.dart';
 import 'package:smartshop/features/loginScreen/presentation/views/widgets/signinwithgoogle_widget.dart';
@@ -102,7 +103,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed(ForgetPasswordScreen.routname);
+                      },
                       child: const Text(
                         "Forget Password ?",
                         style: TextStyle(
