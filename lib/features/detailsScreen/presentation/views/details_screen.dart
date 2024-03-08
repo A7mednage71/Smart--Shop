@@ -1,7 +1,7 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:smartshop/core/assets_manger/assets_manager.dart';
+import 'package:smartshop/core/models/product_model.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/widgets/custom_material_button.dart';
 
@@ -10,6 +10,8 @@ class ProductDetailsScreen extends StatelessWidget {
   static const routname = "DetailsScreen";
   @override
   Widget build(BuildContext context) {
+    ProductModel model =
+        ModalRoute.of(context)!.settings.arguments as ProductModel;
     return Scaffold(
       appBar: AppBar(
         title: const AppNameWidget(name: "Product details"),
@@ -43,7 +45,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: FancyShimmerImage(
-                    imageUrl: AppAssets.phonetest,
+                    imageUrl: model.productImage,
                     height: MediaQuery.of(context).size.height * 0.3,
                     width: MediaQuery.of(context).size.width * 0.5,
                   ),
@@ -52,21 +54,21 @@ class ProductDetailsScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              const Row(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                     child: Text(
-                      "Apple 14 Pro (128GB)-Black",
-                      style: TextStyle(fontSize: 20),
+                      model.productTitle,
+                      style: const TextStyle(fontSize: 20),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Text(
-                    "\$1399.99",
-                    style: TextStyle(
+                    model.productPrice,
+                    style: const TextStyle(
                       fontSize: 20,
                       color: Colors.blue,
                     ),
@@ -109,25 +111,25 @@ class ProductDetailsScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "About this item",
                     style: TextStyle(fontSize: 20),
                   ),
                   Text(
-                    "in Phones",
-                    style: TextStyle(fontSize: 20),
+                    model.productCategory,
+                    style: const TextStyle(fontSize: 20),
                   ),
                 ],
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                "The iPhone 15 has a dual-camera system on the back, which features an improved 48-megapixel main camera plus a 12MP ultrawide similar to last year's model. The main camera shoots 24MP images by default, up from 12MP, and produces better-looking and more detailed images across various lighting conditions/1/2023",
-                style: TextStyle(fontSize: 16),
+              Text(
+                model.productDescription,
+                style: const TextStyle(fontSize: 16),
               ),
               const SizedBox(
                 height: 20,

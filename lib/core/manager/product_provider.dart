@@ -7,6 +7,10 @@ class ProductProvider with ChangeNotifier {
     return myProducts;
   }
 
+  ProductModel? findProductbyId({required String id}) {
+    return myProducts.firstWhere((element) => element.productId == id);
+  }
+
   final List<ProductModel> myProducts = [
     // Phones
     ProductModel(

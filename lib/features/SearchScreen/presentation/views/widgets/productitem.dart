@@ -18,7 +18,8 @@ class ProductItem extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, ProductDetailsScreen.routname);
+          Navigator.pushNamed(context, ProductDetailsScreen.routname,
+              arguments: model);
         },
         child: Column(
           children: [
