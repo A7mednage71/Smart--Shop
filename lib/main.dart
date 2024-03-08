@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:smartshop/core/manager/product_provider.dart';
 import 'package:smartshop/core/utils/themedata/ThemData.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
@@ -27,8 +28,11 @@ class ShopApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => ThemeDataProvider(),
-        )
+          create: (_) => ThemeDataProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ProductProvider(),
+        ),
       ],
       child:
           Consumer<ThemeDataProvider>(builder: (context, themeProvider, child) {

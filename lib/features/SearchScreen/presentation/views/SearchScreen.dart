@@ -1,7 +1,9 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:provider/provider.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
+import 'package:smartshop/core/manager/product_provider.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/features/SearchScreen/presentation/views/widgets/productitem.dart';
 
@@ -28,6 +30,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final productprovider = Provider.of<ProductProvider>(context);
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -69,9 +72,11 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
               Expanded(
                 child: DynamicHeightGridView(
-                  itemCount: 100,
+                  itemCount: productprovider.getProducts().length,
                   builder: (context, index) {
-                    return const ProductItem();
+                    return ChangeNotifierProvider.value(
+                      value: productprovider.getProducts()[index],
+                        child: const ProductItem());
                   },
                   crossAxisCount: 2,
                 ),

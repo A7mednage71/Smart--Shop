@@ -1,6 +1,8 @@
-class ProductModel {
-  final String productID;
-  final String productName;
+import 'package:flutter/material.dart';
+
+class ProductModel with ChangeNotifier {
+  final String productId;
+  final String productTitle;
   final String productPrice;
   final String productCategory;
   final String productDescription;
@@ -8,8 +10,8 @@ class ProductModel {
   final String productQuantity;
 
   ProductModel({
-    required this.productID,
-    required this.productName,
+    required this.productId,
+    required this.productTitle,
     required this.productPrice,
     required this.productCategory,
     required this.productDescription,

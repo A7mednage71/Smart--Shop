@@ -45,6 +45,7 @@ dependencies:
   ionicons: ^0.2.2
   image_picker: ^1.0.7
   google_fonts: 6.1.0
+  uuid: ^4.3.3
 
 dev_dependencies:
   flutter_test:
