@@ -7,6 +7,6 @@ class InProcessOrders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("datadatadata");
+    return const Text("datadatadata");
   }
 }

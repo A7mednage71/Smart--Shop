@@ -5,14 +5,11 @@ import 'package:smartshop/core/utils/themedata/ThemData.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
 import 'package:smartshop/features/forgetPasswordScreen/presentation/views/forget_password_screen.dart';
-import 'package:smartshop/features/homeView/presentation/views/homeview.dart';
-import 'package:smartshop/features/loginScreen/presentation/views/Login_Screen.dart';
 import 'package:smartshop/features/ordersscreen/presentation/views/orders_screen.dart';
 import 'package:smartshop/features/registerscreen/presentation/views/register_screen.dart';
 import 'package:smartshop/features/viewedRecently/presentation/views/viewed_recently.dart';
 import 'package:smartshop/features/wishlistScreen/presentations/views/wishlist_screen.dart';
 import 'package:smartshop/rootScreen.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

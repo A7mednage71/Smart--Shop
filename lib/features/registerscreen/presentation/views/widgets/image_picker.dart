@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/widgets/custom_material_button.dart';
-import 'package:smartshop/features/registerscreen/presentation/views/widgets/Text_button_image_option.dart';
 import 'package:smartshop/features/registerscreen/presentation/views/widgets/image_picker_alrt_component.dart';
 
 class CustomImagePicker extends StatelessWidget {

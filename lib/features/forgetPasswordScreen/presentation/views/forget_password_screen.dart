@@ -13,7 +13,7 @@ class ForgetPasswordScreen extends StatefulWidget {
 
 class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   late TextEditingController _textEditingController;
-  AutovalidateMode _autoval = AutovalidateMode.always;
+  final AutovalidateMode _autoval = AutovalidateMode.always;
   final GlobalKey<FormState> _key = GlobalKey();
   @override
   void initState() {

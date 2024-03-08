@@ -7,6 +7,6 @@ class AllOrdersWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("ffffffffffffffffffff");
+    return const Text("ffffffffffffffffffff");
   }
 }
