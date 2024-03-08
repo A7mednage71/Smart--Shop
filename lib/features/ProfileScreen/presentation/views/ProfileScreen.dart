@@ -6,6 +6,7 @@ import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
 import 'package:smartshop/features/ProfileScreen/presentation/views/widgets/AlertDialogwidget.dart';
 import 'package:smartshop/features/ProfileScreen/presentation/views/widgets/CustomListTile.dart';
+import 'package:smartshop/features/ordersscreen/presentation/views/orders_screen.dart';
 import 'package:smartshop/features/viewedRecently/presentation/views/viewed_recently.dart';
 import 'package:smartshop/features/wishlistScreen/presentations/views/wishlist_screen.dart';
 
@@ -72,7 +73,9 @@ class ProfileScreen extends StatelessWidget {
               CustomListTile(
                 text: "All Orders",
                 image: AppAssets.orderSvg,
-                fun: () {},
+                fun: () {
+                  Navigator.of(context).pushNamed(OrdersScreen.routname);
+                },
                 icon: IconlyLight.arrowRight2,
               ),
               CustomListTile(
