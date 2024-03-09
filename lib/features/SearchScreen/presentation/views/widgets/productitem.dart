@@ -29,6 +29,7 @@ class ProductItem extends StatelessWidget {
                 imageUrl: model.productImage,
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.22,
+                errorWidget: const Icon(Icons.error),
               ),
             ),
             const SizedBox(

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:smartshop/core/manager/product_provider.dart';
 import 'package:smartshop/core/utils/themedata/ThemData.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
+import 'package:smartshop/features/SearchScreen/presentation/views/SearchScreen.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
 import 'package:smartshop/features/forgetPasswordScreen/presentation/views/forget_password_screen.dart';
 import 'package:smartshop/features/ordersscreen/presentation/views/orders_screen.dart';
@@ -51,6 +52,7 @@ class ShopApp extends StatelessWidget {
             OrdersScreen.routname: (context) => const OrdersScreen(),
             ForgetPasswordScreen.routname: (context) =>
                 const ForgetPasswordScreen(),
+            SearchScreen.routname: (context) => const SearchScreen(),
           },
         );
       }),
