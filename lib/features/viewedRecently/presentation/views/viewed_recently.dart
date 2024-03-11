@@ -62,7 +62,7 @@ class ViewdRecentlyScreen extends StatelessWidget {
                 itemCount: 3,
                 crossAxisCount: 2,
                 builder: (BuildContext context, int index) {
-                  return const ProductItem();
+                  return const ProductItem(productid: '',);
                 },
               ),
             ),

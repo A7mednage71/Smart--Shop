@@ -41,6 +41,8 @@ class _SearchScreenState extends State<SearchScreen> {
         ? productprovider.getProducts()
         : productprovider.findproductsbycategory(category: CategoryName);
 
+    List<ProductModel> productListSearch = [];
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -78,18 +80,39 @@ class _SearchScreenState extends State<SearchScreen> {
                           ),
                         ),
                       ),
-                      onChanged: (value) {},
+                      onChanged: (value) {
+                        setState(() {
+                          productListSearch =
+                              productprovider.searchForProduct(product: value);
+                        });
+                      },
+                      onSubmitted: (value) {
+                        setState(() {
+                          productListSearch =
+                              productprovider.searchForProduct(product: value);
+                        });
+                      },
                     ),
                     const SizedBox(
                       height: 10,
                     ),
+                    if (_controller.text.isNotEmpty &&
+                        productListSearch.isEmpty) ...[
+                      const Center(child: Text("No products found")),
+                    ],
                     Expanded(
                       child: DynamicHeightGridView(
-                        itemCount: products.length,
+                        itemCount: _controller.text.isNotEmpty
+                            ? productListSearch.length
+                            : products.length,
                         builder: (context, index) {
                           return ChangeNotifierProvider.value(
-                              value: products[index],
-                              child: const ProductItem());
+                            value: products[index],
+                            child: ProductItem(
+                                productid: _controller.text.isNotEmpty
+                                    ? productListSearch[index].productId
+                                    : products[index].productId),
+                          );
                         },
                         crossAxisCount: 2,
                       ),

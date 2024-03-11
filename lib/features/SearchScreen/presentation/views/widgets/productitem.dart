@@ -2,18 +2,21 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
+import 'package:smartshop/core/manager/product_provider.dart';
 import 'package:smartshop/core/models/product_model.dart';
 import 'package:smartshop/core/widgets/custom_material_button.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
-    super.key,
+    super.key, required this.productid,
   });
-
+  final String productid;
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<ProductModel>(context);
+    // final model = Provider.of<ProductModel>(context);
+    final productprovider = Provider.of<ProductProvider>(context);
+    ProductModel? model = productprovider.findProductbyId(id: productid);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
@@ -26,7 +29,7 @@ class ProductItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: FancyShimmerImage(
-                imageUrl: model.productImage,
+                imageUrl: model!.productImage,
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.22,
                 errorWidget: const Icon(Icons.error),

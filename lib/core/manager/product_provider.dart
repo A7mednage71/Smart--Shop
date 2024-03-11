@@ -19,6 +19,14 @@ class ProductProvider with ChangeNotifier {
         .toList();
   }
 
+  List<ProductModel> searchForProduct({required String product}) {
+    List<ProductModel> mySearch = myProducts
+        .where((element) =>
+            element.productTitle.toLowerCase().contains(product.toLowerCase()))
+        .toList();
+    return mySearch;
+  }
+
   final List<ProductModel> myProducts = [
     // Phones
     ProductModel(
