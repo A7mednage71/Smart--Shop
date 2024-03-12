@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:smartshop/core/manager/product_provider.dart';
 import 'package:smartshop/core/utils/themedata/ThemData.dart';
 import 'package:smartshop/core/utils/themedata/provider/themeData_provider.dart';
+import 'package:smartshop/features/CartScreen/Presentation/views/manager/cart_provider.dart';
 import 'package:smartshop/features/SearchScreen/presentation/views/SearchScreen.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
 import 'package:smartshop/features/forgetPasswordScreen/presentation/views/forget_password_screen.dart';
@@ -29,10 +30,13 @@ class ShopApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => ThemeDataProvider(),
+          create: (context) => ThemeDataProvider(),
         ),
         ChangeNotifierProvider(
-          create: (_) => ProductProvider(),
+          create: (context) => ProductProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
         ),
       ],
       child:

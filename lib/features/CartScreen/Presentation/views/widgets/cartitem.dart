@@ -1,13 +1,19 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:provider/provider.dart';
+import 'package:smartshop/core/manager/product_provider.dart';
+import 'package:smartshop/core/models/product_model.dart';
 import 'package:smartshop/features/CartScreen/Presentation/views/widgets/quantiylist.dart';
+import 'package:smartshop/features/CartScreen/data/models/cart_model.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({super.key});
-
+  const CartItem({super.key, required this.cart});
+  final CartModel cart;
   @override
   Widget build(BuildContext context) {
+    final productprovider = Provider.of<ProductProvider>(context);
+    ProductModel? model = productprovider.findProductbyId(id: cart.productId);
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
@@ -18,8 +24,7 @@ class CartItem extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: FancyShimmerImage(
-                imageUrl:
-                    "https://www.shutterstock.com/image-photo/white-sneakers-on-background-including-260nw-1100736923.jpg",
+                imageUrl: model!.productImage,
               ),
             ),
           ),
@@ -33,9 +38,9 @@ class CartItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Expanded(
+                    Expanded(
                       child: Text(
-                        "AdidasAdidasAdidasAdidasAdidas Ultra- 21",
+                        model.productTitle,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                       ),
@@ -57,10 +62,10 @@ class CartItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "\$1085.00",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                    Text(
+                      model.productPrice,
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w400),
                     ),
                     ElevatedButton.icon(
                       onPressed: () {
@@ -72,7 +77,7 @@ class CartItem extends StatelessWidget {
                         );
                       },
                       icon: const Icon(IconlyLight.arrowDown2),
-                      label: const Text("Qty:1"),
+                      label: Text(model.productQuantity),
                     )
                   ],
                 ),

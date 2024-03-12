@@ -1,7 +1,7 @@
 class CartModel {
   final String cartId;
   final String productId;
-  final String quantity;
+  final int quantity;
 
   CartModel({
     required this.cartId,

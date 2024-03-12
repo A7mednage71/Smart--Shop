@@ -5,17 +5,20 @@ import 'package:provider/provider.dart';
 import 'package:smartshop/core/manager/product_provider.dart';
 import 'package:smartshop/core/models/product_model.dart';
 import 'package:smartshop/core/widgets/custom_material_button.dart';
+import 'package:smartshop/features/CartScreen/Presentation/views/manager/cart_provider.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
-    super.key, required this.productid,
+    super.key,
+    required this.productid,
   });
   final String productid;
   @override
   Widget build(BuildContext context) {
     // final model = Provider.of<ProductModel>(context);
     final productprovider = Provider.of<ProductProvider>(context);
+    final cartprovider = Provider.of<CartProvider>(context);
     ProductModel? model = productprovider.findProductbyId(id: productid);
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -68,8 +71,18 @@ class ProductItem extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 ),
-                const CustomMaterialButton(
-                  icon: Icon(Icons.add_shopping_cart_rounded),
+                CustomMaterialButton(
+                  icon: Icon(
+                      cartprovider.inCartproducts(productId: model.productId)
+                          ? Icons.check
+                          : Icons.add_shopping_cart_rounded),
+                  onTap: () {
+                    if (cartprovider.inCartproducts(
+                        productId: model.productId)) {
+                      return;
+                    }
+                    cartprovider.addProductToCart(productId: model.productId);
+                  },
                 )
               ],
             )
