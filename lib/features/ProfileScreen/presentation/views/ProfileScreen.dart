@@ -147,7 +147,9 @@ class ProfileScreen extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (context) {
-                          return const AlertDialogWidget();
+                          return const AlertDialogWidget(
+                            text: 'Confirm Logout',
+                          );
                         });
                   },
                   icon: const Icon(

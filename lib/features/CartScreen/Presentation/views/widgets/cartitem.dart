@@ -4,6 +4,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:smartshop/core/manager/product_provider.dart';
 import 'package:smartshop/core/models/product_model.dart';
+import 'package:smartshop/features/CartScreen/Presentation/views/manager/cart_provider.dart';
 import 'package:smartshop/features/CartScreen/Presentation/views/widgets/quantiylist.dart';
 import 'package:smartshop/features/CartScreen/data/models/cart_model.dart';
 
@@ -14,6 +15,8 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final productprovider = Provider.of<ProductProvider>(context);
     ProductModel? model = productprovider.findProductbyId(id: cart.productId);
+    final cartprovider = Provider.of<CartProvider>(context);
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
@@ -48,7 +51,10 @@ class CartItem extends StatelessWidget {
                     Column(
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            cartprovider.removeProduct(
+                                productId: cart.productId);
+                          },
                           icon: const Icon(Icons.delete_outlined),
                         ),
                         IconButton(
@@ -71,13 +77,16 @@ class CartItem extends StatelessWidget {
                       onPressed: () {
                         showModalBottomSheet(
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           context: context,
-                          builder: (context) => const QuantityList(),
+                          builder: (context) => QuantityList(
+                            cart: cart,
+                          ),
                         );
                       },
                       icon: const Icon(IconlyLight.arrowDown2),
-                      label: Text(model.productQuantity),
+                      label: Text(cart.quantity.toString()),
                     )
                   ],
                 ),

@@ -4,7 +4,14 @@ import 'package:smartshop/core/assets_manger/assets_manager.dart';
 class AlertDialogWidget extends StatelessWidget {
   const AlertDialogWidget({
     super.key,
+    required this.text,
+    this.cancelonPress,
+    this.oKonPress,
   });
+
+  final String text;
+  final void Function()? cancelonPress;
+  final void Function()? oKonPress;
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +30,9 @@ class AlertDialogWidget extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            const Text(
-              "Confirm Logout",
-              style: TextStyle(fontSize: 20),
+            Text(
+              text,
+              style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(
               height: 15,
@@ -34,14 +41,14 @@ class AlertDialogWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: cancelonPress,
                   child: const Text(
                     "CANCEL",
                     style: TextStyle(fontSize: 20, color: Colors.lightBlue),
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: oKonPress,
                   child: const Text(
                     "OK",
                     style: TextStyle(fontSize: 20, color: Colors.red),

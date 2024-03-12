@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:smartshop/core/manager/product_provider.dart';
+import 'package:smartshop/features/CartScreen/Presentation/views/manager/cart_provider.dart';
 
 class BottomSheetCart extends StatelessWidget {
   const BottomSheetCart({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final cartprovider = Provider.of<CartProvider>(context);
+    final productprovider = Provider.of<ProductProvider>(context);
+
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
       height: 70,
@@ -13,17 +19,18 @@ class BottomSheetCart extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Column(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Total (3 products / 3 items)"),
-                SizedBox(
+                Text(
+                    "Total (${cartprovider.cartproducts.length} products /${cartprovider.quantity()} items)"),
+                const SizedBox(
                   height: 5,
                 ),
                 Text(
-                  "\$394.99",
-                  style: TextStyle(
+                  "${cartprovider.getTotalPrice(provider: productprovider)}",
+                  style: const TextStyle(
                       fontStyle: FontStyle.italic, color: Colors.blue),
                 ),
               ],

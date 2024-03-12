@@ -8,6 +8,7 @@ import 'package:smartshop/features/CartScreen/Presentation/views/manager/cart_pr
 import 'package:smartshop/features/CartScreen/Presentation/views/widgets/bottomSheet.dart';
 import 'package:smartshop/features/CartScreen/Presentation/views/widgets/cartitem.dart';
 import 'package:smartshop/features/CartScreen/data/models/cart_model.dart';
+import 'package:smartshop/features/ProfileScreen/presentation/views/widgets/AlertDialogwidget.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -32,11 +33,27 @@ class CartScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10),
                 child: Image.asset(AppAssets.shoppingCart),
               ),
-              actions: const [
+              actions: [
                 Padding(
-                  padding: EdgeInsets.only(right: 5),
+                  padding: const EdgeInsets.only(right: 5),
                   child: CustomMaterialButton(
-                    icon: Icon(Icons.delete_forever_rounded),
+                    icon: const Icon(Icons.delete_forever_rounded),
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext buildContext) {
+                            return AlertDialogWidget(
+                              text: 'All Products in Your cart will be removed',
+                              oKonPress: () {
+                                cartprovider.clearAllProducts();
+                                Navigator.of(context).pop();
+                              },
+                              cancelonPress: () {
+                                Navigator.of(context).pop();
+                              },
+                            );
+                          });
+                    },
                   ),
                 )
               ],

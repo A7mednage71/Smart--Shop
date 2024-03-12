@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:smartshop/features/CartScreen/Presentation/views/manager/cart_provider.dart';
+import 'package:smartshop/features/CartScreen/data/models/cart_model.dart';
 
 class QuantityList extends StatefulWidget {
-  const QuantityList({super.key});
+  const QuantityList({super.key, required this.cart});
+
+  final CartModel cart;
 
   @override
   State<QuantityList> createState() => _QuantityListState();
@@ -10,6 +15,7 @@ class QuantityList extends StatefulWidget {
 class _QuantityListState extends State<QuantityList> {
   @override
   Widget build(BuildContext context) {
+    final cartprovider = Provider.of<CartProvider>(context);
     return Column(
       children: [
         const SizedBox(
@@ -27,7 +33,14 @@ class _QuantityListState extends State<QuantityList> {
             itemBuilder: (context, index) {
               return Center(
                 child: InkWell(
-                  onTap: () {},
+                  splashColor: Colors.transparent,
+                  onTap: () {
+                    cartprovider.updateQuantity(
+                      productId: widget.cart.productId,
+                      quantity: index + 1,
+                    );
+                    Navigator.pop(context);
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(

@@ -98,7 +98,9 @@ class ProductDetailsScreen extends StatelessWidget {
                           ),
                         ),
                         icon: const Icon(Icons.add),
-                        onPressed: () {},
+                        onPressed: () {
+                          
+                        },
                         label: const Text(
                           "Add to cart",
                           style: TextStyle(fontSize: 16),
