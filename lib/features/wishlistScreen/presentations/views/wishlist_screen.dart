@@ -1,9 +1,12 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/widgets/customemptydatawidget.dart';
 import 'package:smartshop/features/SearchScreen/presentation/views/widgets/productitem.dart';
+import 'package:smartshop/features/wishlistScreen/data/models/wishlist_model.dart';
+import 'package:smartshop/features/wishlistScreen/presentations/manager/wishlist_provider.dart';
 
 class WishlistScreen extends StatelessWidget {
   const WishlistScreen({super.key});
@@ -11,6 +14,9 @@ class WishlistScreen extends StatelessWidget {
   final bool isempty = false;
   @override
   Widget build(BuildContext context) {
+    final wishlistprovider = Provider.of<WishlistProvider>(context);
+    final List<WishListModel> Products =
+        wishlistprovider.getWishlistproducts().values.toList();
     return isempty
         ? Scaffold(
             appBar: AppBar(
@@ -59,10 +65,15 @@ class WishlistScreen extends StatelessWidget {
             body: Padding(
               padding: const EdgeInsets.all(8.0),
               child: DynamicHeightGridView(
-                itemCount: 3,
+                itemCount: wishlistprovider.getWishlistproducts().length,
                 crossAxisCount: 2,
                 builder: (BuildContext context, int index) {
-                  return const ProductItem(productid: '',);
+                  return ChangeNotifierProvider.value(
+                    value: Products[index],
+                    child: ProductItem(
+                      productid: Products[index].productId,
+                    ),
+                  );
                 },
               ),
             ),

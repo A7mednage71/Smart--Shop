@@ -4,6 +4,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:smartshop/core/manager/product_provider.dart';
 import 'package:smartshop/core/models/product_model.dart';
+import 'package:smartshop/core/widgets/custom_heart_icon.dart';
 import 'package:smartshop/core/widgets/custom_material_button.dart';
 import 'package:smartshop/features/CartScreen/Presentation/views/manager/cart_provider.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
@@ -52,9 +53,8 @@ class ProductItem extends StatelessWidget {
                     maxLines: 2,
                   ),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(IconlyLight.heart),
+                CustomHeartWidget(
+                  productid: model.productId,
                 )
               ],
             ),

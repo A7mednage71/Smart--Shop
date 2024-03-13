@@ -4,6 +4,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/models/product_model.dart';
+import 'package:smartshop/core/widgets/custom_heart_icon.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
 
 class LatestArrivalItem extends StatelessWidget {
@@ -16,7 +17,8 @@ class LatestArrivalItem extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, ProductDetailsScreen.routname);
+          Navigator.pushNamed(context, ProductDetailsScreen.routname,
+              arguments: productmodel);
         },
         child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.52,
@@ -47,9 +49,8 @@ class LatestArrivalItem extends StatelessWidget {
                           onPressed: () {},
                           icon: const Icon(Icons.add_shopping_cart_rounded),
                         ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(IconlyBold.heart),
+                        CustomHeartWidget(
+                          productid: productmodel.productId,
                         ),
                       ],
                     ),
