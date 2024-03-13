@@ -19,20 +19,21 @@ class LatestArrivalItem extends StatelessWidget {
           Navigator.pushNamed(context, ProductDetailsScreen.routname);
         },
         child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.42,
+          width: MediaQuery.of(context).size.width * 0.52,
           child: Row(
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: FancyShimmerImage(
                   imageUrl: productmodel.productImage,
-                  width: MediaQuery.of(context).size.width * 0.1,
-                  height: MediaQuery.of(context).size.width * 0.150,
+                  width: MediaQuery.of(context).size.width * 0.2,
+                  height: MediaQuery.of(context).size.height * 0.2,
                 ),
               ),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       productmodel.productTitle,
@@ -54,7 +55,8 @@ class LatestArrivalItem extends StatelessWidget {
                     ),
                     Text(
                       productmodel.productPrice,
-                      style: const TextStyle(fontSize: 18),
+                      style: const TextStyle(
+                          fontSize: 18, color: Colors.lightBlue),
                     )
                   ],
                 ),
