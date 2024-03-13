@@ -1,9 +1,12 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/widgets/customemptydatawidget.dart';
 import 'package:smartshop/features/SearchScreen/presentation/views/widgets/productitem.dart';
+import 'package:smartshop/features/viewedRecently/data/models/viewed_recently_model.dart';
+import 'package:smartshop/features/viewedRecently/presentation/manager/wiewed_recently_manager.dart';
 
 class ViewdRecentlyScreen extends StatelessWidget {
   const ViewdRecentlyScreen({super.key});
@@ -11,7 +14,10 @@ class ViewdRecentlyScreen extends StatelessWidget {
   final bool isempty = false;
   @override
   Widget build(BuildContext context) {
-    return isempty
+    final viewdproduct = Provider.of<ViewedRecentlyProvider>(context);
+    List<ViewedRecentlyModel> produts =
+        viewdproduct.getViewedproducts().values.toList();
+    return produts.isEmpty
         ? Scaffold(
             appBar: AppBar(
               leading: IconButton(
@@ -59,10 +65,15 @@ class ViewdRecentlyScreen extends StatelessWidget {
             body: Padding(
               padding: const EdgeInsets.all(8.0),
               child: DynamicHeightGridView(
-                itemCount: 3,
+                itemCount: produts.length,
                 crossAxisCount: 2,
                 builder: (BuildContext context, int index) {
-                  return const ProductItem(productid: '',);
+                  return ChangeNotifierProvider.value(
+                    value: produts[index],
+                    child: ProductItem(
+                      productid: produts[index].productid,
+                    ),
+                  );
                 },
               ),
             ),

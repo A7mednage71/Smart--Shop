@@ -6,6 +6,7 @@ import 'package:smartshop/core/assets_manger/assets_manager.dart';
 import 'package:smartshop/core/models/product_model.dart';
 import 'package:smartshop/core/widgets/custom_heart_icon.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
+import 'package:smartshop/features/viewedRecently/presentation/manager/wiewed_recently_manager.dart';
 
 class LatestArrivalItem extends StatelessWidget {
   const LatestArrivalItem({super.key});
@@ -13,10 +14,13 @@ class LatestArrivalItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final productmodel = Provider.of<ProductModel>(context);
+    final viewdproduct = Provider.of<ViewedRecentlyProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
+          viewdproduct.addProductToViewedProducts(
+              productId: productmodel.productId);
           Navigator.pushNamed(context, ProductDetailsScreen.routname,
               arguments: productmodel);
         },

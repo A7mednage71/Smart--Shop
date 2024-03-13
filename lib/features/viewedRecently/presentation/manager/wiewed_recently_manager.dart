@@ -13,15 +13,15 @@ class ViewedRecentlyProvider with ChangeNotifier {
     return viewedProducts.containsKey(productId);
   }
 
-  addOrremeoveProductToWishlist({required String productId}) {
+  addProductToViewedProducts({required String productId}) {
     if (inViewedproducts(productId: productId)) {
-      viewedProducts.remove(productId);
-    } else {
-      viewedProducts.putIfAbsent(
-        productId,
-        () => ViewedRecentlyModel(id: const Uuid().v4(), productid: productId),
-      );
+      return;
     }
+    viewedProducts.putIfAbsent(
+      productId,
+      () => ViewedRecentlyModel(id: const Uuid().v4(), productid: productId),
+    );
+
     notifyListeners();
   }
 

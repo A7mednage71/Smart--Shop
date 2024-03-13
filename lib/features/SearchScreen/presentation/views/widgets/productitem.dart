@@ -8,6 +8,7 @@ import 'package:smartshop/core/widgets/custom_heart_icon.dart';
 import 'package:smartshop/core/widgets/custom_material_button.dart';
 import 'package:smartshop/features/CartScreen/Presentation/views/manager/cart_provider.dart';
 import 'package:smartshop/features/detailsScreen/presentation/views/details_screen.dart';
+import 'package:smartshop/features/viewedRecently/presentation/manager/wiewed_recently_manager.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
@@ -17,7 +18,7 @@ class ProductItem extends StatelessWidget {
   final String productid;
   @override
   Widget build(BuildContext context) {
-    // final model = Provider.of<ProductModel>(context);
+    final viewdproduct = Provider.of<ViewedRecentlyProvider>(context);
     final productprovider = Provider.of<ProductProvider>(context);
     final cartprovider = Provider.of<CartProvider>(context);
     ProductModel? model = productprovider.findProductbyId(id: productid);
@@ -25,6 +26,7 @@ class ProductItem extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
+          viewdproduct.addProductToViewedProducts(productId: model.productId);
           Navigator.pushNamed(context, ProductDetailsScreen.routname,
               arguments: model);
         },

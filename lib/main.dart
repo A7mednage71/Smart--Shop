@@ -10,6 +10,7 @@ import 'package:smartshop/features/detailsScreen/presentation/views/details_scre
 import 'package:smartshop/features/forgetPasswordScreen/presentation/views/forget_password_screen.dart';
 import 'package:smartshop/features/ordersscreen/presentation/views/orders_screen.dart';
 import 'package:smartshop/features/registerscreen/presentation/views/register_screen.dart';
+import 'package:smartshop/features/viewedRecently/presentation/manager/wiewed_recently_manager.dart';
 import 'package:smartshop/features/viewedRecently/presentation/views/viewed_recently.dart';
 import 'package:smartshop/features/wishlistScreen/presentations/manager/wishlist_provider.dart';
 import 'package:smartshop/features/wishlistScreen/presentations/views/wishlist_screen.dart';
@@ -41,6 +42,9 @@ class ShopApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => WishlistProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ViewedRecentlyProvider(),
         ),
       ],
       child:
