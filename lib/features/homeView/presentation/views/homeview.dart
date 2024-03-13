@@ -1,7 +1,9 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:smartshop/core/assets_manger/assets_manager.dart';
+import 'package:smartshop/core/manager/product_provider.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/features/homeView/presentation/views/widgets/categoryitem.dart';
 import 'package:smartshop/features/homeView/presentation/views/widgets/latestarrivalitem.dart';
@@ -11,6 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final productprovider = Provider.of<ProductProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: const AppNameWidget(name: "Shop Smart"),
@@ -70,7 +73,10 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder: (BuildContext contxt, int index) {
-                    return const LatestArrivalItem();
+                    return ChangeNotifierProvider.value(
+                      value: productprovider.myProducts[index],
+                      child: const LatestArrivalItem(),
+                    );
                   },
                 ),
               ),

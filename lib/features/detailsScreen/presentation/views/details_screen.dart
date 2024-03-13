@@ -1,9 +1,11 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:provider/provider.dart';
 import 'package:smartshop/core/models/product_model.dart';
 import 'package:smartshop/core/widgets/App_Name_Shimmer.dart';
 import 'package:smartshop/core/widgets/custom_material_button.dart';
+import 'package:smartshop/features/CartScreen/Presentation/views/manager/cart_provider.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({super.key});
@@ -12,6 +14,7 @@ class ProductDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     ProductModel model =
         ModalRoute.of(context)!.settings.arguments as ProductModel;
+    final cartprovider = Provider.of<CartProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: const AppNameWidget(name: "Product details"),
@@ -97,13 +100,24 @@ class ProductDetailsScreen extends StatelessWidget {
                             const Size(double.infinity, 50),
                           ),
                         ),
-                        icon: const Icon(Icons.add),
+                        icon: Icon(cartprovider.inCartproducts(
+                                productId: model.productId)
+                            ? Icons.check
+                            : Icons.add),
                         onPressed: () {
-                          
+                          if (cartprovider.inCartproducts(
+                              productId: model.productId)) {
+                            return;
+                          }
+                          cartprovider.addProductToCart(
+                              productId: model.productId);
                         },
-                        label: const Text(
-                          "Add to cart",
-                          style: TextStyle(fontSize: 16),
+                        label: Text(
+                          cartprovider.inCartproducts(
+                                  productId: model.productId)
+                              ? "in cart"
+                              : "Add to cart",
+                          style: const TextStyle(fontSize: 16),
                         ),
                       ),
                     ),
