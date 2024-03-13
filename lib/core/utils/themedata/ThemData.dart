@@ -34,7 +34,7 @@ class Themedata {
       primaryColor: isDark
           ? const Color.fromARGB(255, 218, 54, 202)
           : const Color(0xffE2E0FF),
-      textTheme: GoogleFonts.redHatTextTextTheme(),
+      // textTheme: GoogleFonts.redHatTextTextTheme(),
     );
   }
 }

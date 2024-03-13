@@ -11,13 +11,12 @@ import 'package:smartshop/features/wishlistScreen/presentations/manager/wishlist
 class WishlistScreen extends StatelessWidget {
   const WishlistScreen({super.key});
   static const routname = "WishlistScreen";
-  final bool isempty = false;
   @override
   Widget build(BuildContext context) {
     final wishlistprovider = Provider.of<WishlistProvider>(context);
     final List<WishListModel> Products =
         wishlistprovider.getWishlistproducts().values.toList();
-    return isempty
+    return Products.isEmpty
         ? Scaffold(
             appBar: AppBar(
               leading: IconButton(
